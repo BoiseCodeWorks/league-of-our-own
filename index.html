@@ -1,0 +1,29 @@
+<html ng-app="league">
+<head>
+	<meta charset="UTF-8">
+	<title>League</title>
+</head>
+<body>
+	{{2+2}}
+		<ui-view></ui-view>
+    
+    <!--Load Libraries-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/js-data/dist/js-data.js"></script>
+    <script src="bower_components/js-data-firebase/dist/js-data-firebase.js"></script>
+    <script src="bower_components/js-data-angular/dist/js-data-angular.js"></script>
+	
+	<!--Load App-->
+		<script src="app/config/init.js"></script>
+		<script src="app/config/data-adapter.js"></script>
+		
+		<script src="app/config/routes.js"></script>
+
+		<script src="app/components/home/home-controller.js"></script>
+		<script src="app/components/sports/sports-controller.js"></script>
+		<script src="app/components/sport/sport-controller.js"></script>
+		<script src="app/components/room/room-controller.js"></script>
+</body>
+</html>
