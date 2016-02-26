@@ -1,3 +1,3 @@
-app.controller('RoomController', function(){
+app.controller('RoomController', function(Models){
 	
 });

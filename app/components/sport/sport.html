@@ -1,1 +1,33 @@
-elo sport
+<form ng-submit="addRoom()">
+	<div class="form-group">
+		<label for="">Name:</label>
+		<input type="text" class="form-control" ng-model="newRoom.name">
+	</div>
+	<div class="form-group">
+		<label for="">Description:</label>
+		<textarea class="form-control" row="8" ng-model="newRoom.description"></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary btn-lg">Add Room</button>
+</form>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1>elo {{sport.name}}</h1>
+		<p>{{sport.description}}</p>
+	</div>
+
+	<div class="panel-body">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="room in rooms track by room.id">
+				<span class="pull-right">
+					<button class="btn btn-info" ng-click="room.editing = !room.editing" ng-if="!room.editing">EDIT</button>
+					<button class="btn btn-success" ng-click="room.editing = !room.editing; room.DSSave()" ng-if="room.editing">SAVE</button>
+					<button class="btn btn-danger" ng-click="remove(room)">DELETE</button>
+				</span>
+				<h3>{{room.name}}</h3>
+				<p ng-if="!room.editing">{{room.description}}</p>
+				<textarea class="form-control" rows="8" ng-model="room.description" ng-if="room.editing"></textarea>
+			</li>
+		</ul>
+	</div>
+</div>

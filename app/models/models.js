@@ -1,7 +1,7 @@
 app.factory('Models', function (DS) {
 	var Models = {
-		sport: Sport(),
-		room: Room()
+		Sport: Sport(),
+		Room: Room()
 	}
 
 	return Models;
@@ -33,10 +33,11 @@ app.factory('Models', function (DS) {
 						foreignKey: 'sportId'
 					}
 				}
+			},
+			beforeCreate: function(resource,room,next){
+				room.created = Date.now();
+				next(null, room);
 			}
 		})
 	}
-
-
-
 })

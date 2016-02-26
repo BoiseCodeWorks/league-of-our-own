@@ -15,15 +15,16 @@ app.config(function($stateProvider, $urlRouterProvider){
 			controller: 'SportsController'
 		})
 		.state('sport', {
-			url: '/sports/:sportName',
+			url: '/sports/:sportId',
 			templateUrl: base+'sport/sport.html',
 			controller: 'SportController',
 			resolve: {
-				sport: function(){
+				sport: function($stateParams, Models){
 					//HEY GO GET THE sport FOR THIS name
 					//IF NO sport AT THIS name 
 					//GO BACK TO /sports 
 					//TODO:FEATURE: ask there is no .... would you like to create it?
+
 				}
 			}
 		})
